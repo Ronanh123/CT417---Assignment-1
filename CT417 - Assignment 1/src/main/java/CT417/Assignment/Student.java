@@ -14,6 +14,10 @@ public class Student {
 	private Date dob;
 
 	
+	public Student(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
 	
 	public String getUsername() {
 		return name + age;
@@ -28,6 +32,14 @@ public class Student {
 	public String getCourse() {
 		return course;
 	}
+	public Date getDob() {
+		return dob;
+	}
+
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
+
 	public void setCourse(String course) {
 		this.course = course;
 	}

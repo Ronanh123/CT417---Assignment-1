@@ -8,7 +8,8 @@ public class Module {
 	private List<Student> students;
 	private List<Programme> courses;
 	
-	public Module(String code) {
+	public Module(String name, String code) {
+		this.name = name;
 		this.code = code;
 	}
 	public String getName() {

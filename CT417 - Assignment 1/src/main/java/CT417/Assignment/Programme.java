@@ -10,6 +10,11 @@ public class Programme {
 	private String name;
 	private List<Module> modules;
 	private List<Student> students;
+	
+	public Programme(String name) {
+		this.name = name;
+	}
+	
 	public String getName() {
 		return name;
 	}
