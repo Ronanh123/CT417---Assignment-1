@@ -15,8 +15,6 @@ repositories {
     // Use jcenter for resolving dependencies.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
-    maven { url 'https://jitpack.io' }
-    
 }
 
 dependencies {
@@ -29,5 +27,7 @@ dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
     
-    implementation 'com.github.Ronanh123:CT417---Assignment-1:d1faa9652e'
+    // https://mvnrepository.com/artifact/org.terasoluna.gfw/terasoluna-gfw-jodatime
+    implementation group: 'org.terasoluna.gfw', name: 'terasoluna-gfw-jodatime', version: '5.7.0.RELEASE'
+    
 }
