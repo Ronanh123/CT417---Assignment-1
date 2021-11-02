@@ -3,7 +3,7 @@ pipeline {
 
     
     stages {
-        stage('Compile') {
+        stage('Build') {
             steps {
                 gradle'clean build'
             }}
