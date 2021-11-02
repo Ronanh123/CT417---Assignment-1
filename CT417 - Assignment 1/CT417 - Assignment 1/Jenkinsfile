@@ -5,20 +5,19 @@ pipeline {
     stages {
         stage('Compile') {
             steps {
-                gradlew('clean', 'classes')
-            }
-        }
+                gradle'clean build'
+            }}
+        
         stage('Unit Tests') {
             steps {
-                gradlew('test')
-            }
+                gradle 'test'
+            }}
             }
             post {
                 always {
                     junit '**/build/test-results/test/TEST-*.xml'
-                }
-            }
-        }
+                }}
+        
        
         
 }
