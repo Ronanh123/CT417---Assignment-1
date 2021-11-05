@@ -1,25 +1,31 @@
 pipeline {
     agent any
-
     
     stages {
+        stage('Checking Out Code'){
+            steps{
+                git 'https://github.com/Ronanh123/CT417-Assignment1-DriverProject'
+            }
+        }
+        
         stage('Build') {
             steps {
-		withGradle(){
-                bat 'gradle clean build'}
+                bat '"C:/Users/ronan/CT417-Assignment1-DriverProject/CT417 - Assignment 1(Driver Project)/gradlew.bat" build'
             }}
-        
-        stage('Unit Tests') {
+            
+        stage('Run Tests'){
             steps {
-		withGradle(){
-                bat 'gradle test'}
-            }}
+                bat '"C:/Users/ronan/CT417---Assignment-1/CT417 - Assignment 1/src/test/java/CT417/Assignment/Testing.java" test'
             }
-            post {
-                always {
-                    junit '**/build/test-results/test/TEST-*.xml'
-                }}
+        }
         
+        stage('Deploy War File'){
+            steps{
+                deploy adapters: [tomcat9(credentialsId: '1c131c5d-0a8b-46c4-8440-96d487e096d4', path: '', url: 'http://localhost:9090')], contextPath: 'CT417-Assignment', war: '**/*.war'
+            }
+        }
        
+    }
+    
         
 }
