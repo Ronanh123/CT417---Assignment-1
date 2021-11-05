@@ -5,15 +5,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-		withGradle(){
                 bat 'gradle clean build'
-            }}}
+            }}
         
         stage('Unit Tests') {
             steps {
-		withGradle(){
                 bat 'gradle test'
-            }}}
+            }}
             }
             post {
                 always {
